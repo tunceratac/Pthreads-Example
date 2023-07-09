@@ -65,3 +65,6 @@ void bubbleSort(node *start); // takes the 1D Linked list, and sort it depending
 - You must take two command line arguments, the first for the filename of the name of the CSV file and the second one for the numOfThreads.
   
 - Descriptions, variable types, and names are written to help you during the implementation of the assignment. You must write your codes depending on the given convention and rules.
+
+<h2>A sample execution</h2>
+./executable_name <numbers.csv> <numOfThreads>
