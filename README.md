@@ -44,8 +44,11 @@ hash_table *initializeHashTable(unsigned numOfThread, unsigned numOfElements)
 - Afterward, you will create the structure (parameterPass) you will pass to each thread and call the first function to be executed by threads. This function is the insertElements function. In this function, each thread will index a certain array region, calculate the modular values of the numbers within the corresponding region and add them to the relevant location of the hash table. You can use the Pthread mutex functions to avoid the possible race condition here. However, when using mutexes, make sure to use them only in the regions of the possible existence of race conditions. Unnecessary or incorrect usage will result in a reduction on your overall grade. At this stage, you should work with the number of threads that is specified by the user. The array area where each thread will run will be calculated as follows:
   
 interval = nof_element / nofThreads + 1;
+
 unsigned offset = interval * tid;
+
 unsigned last_ele = offset + interval;
+
 if (last_ele > nof_element) last_ele = nof_element;
 
 - where nof_element holds the total amount of numbers, nofThreads holds the total number of threads specified by the user, and tid is the thread id that you set to each thread starting from zero. Thanks to insertionFunction, you will have a hash table storing all the numbers within the nodes. Even if you classify numbers by hashing function, the numbers are still unsorted within each 1D linked list.
